@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}What Our Users Say{% endblock %}
+
+{% block content %}
+<style>
+    /* Fade-in animation */
+    .fade-in {
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Testimonial Card */
+    .testimonial-card {
+        background: #1a1a1a;
+        border-radius: 16px;
+        padding: 25px;
+        color: #eee;
+        box-shadow: 0 0 20px rgba(255, 179, 0, 0.15);
+    }
+
+    /* Stars */
+    .star {
+        color: #ffb300;
+        font-size: 1.1rem;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid #ffb300;
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(255, 179, 0, 0.5);
+        transition: 0.4s;
+    }
+</style>
+
+<div class="container py-5 fade-in">
+
+    <h2 class="text-center text-warning fw-bold mb-3">
+        🌟 What Our Users Say 🌟
+    </h2>
+
+    <p class="text-center text-light-50 mb-5">
+        Real experiences from people who found clarity and peace through Dharma AI
+    </p>
+
+    <!-- ⭐ TESTIMONIAL CAROUSEL -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500"
+        data-bs-pause="hover">
+
+        <div class="carousel-inner">
+
+            <!-- USER 1 -->
+            <div class="carousel-item active">
+                <div class="testimonial-card mx-auto text-center" style="max-width:420px;">
+                    <img src="{% static 'images/ajay.jpeg' %}" class="rounded-circle mb-3 profile-img" width="100"
+                        height="100">
+                    <h5 class="text-warning mb-1">Ajay Kumar</h5>
+                    <p class="text-secondary small">Software Engineer, Bangalore</p>
+                    <div class="mb-2">
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                    </div>
+                    <p class="text-light-50">
+                        “I usually don’t trust AI for spiritual topics, but Dharma AI surprised me.
+                        The answers are calm, balanced, and grounded in scriptures.
+                        It doesn’t feel preachy — it feels like guidance.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- USER 2 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto text-center" style="max-width:420px;">
+                    <img src="{% static 'images/dibya.jpeg' %}" class="rounded-circle mb-3 profile-img" width="100"
+                        height="100">
+                    <h5 class="text-warning mb-1">Dibya Jyoti</h5>
+                    <p class="text-secondary small">Business Owner, Bhubaneshwar</p>
+                    <div class="mb-2">
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star star"></i>
+                    </div>
+                    <p class="text-light-50">
+                        “During stressful days, I use the Ramayan and Sunderkand sections.
+                        The explanations are simple and respectful, and they actually help me reflect.
+                        It feels like revisiting what our elders taught us, but in a modern way.
+                    </p>
+                </div>
+            </div>
+
+            <!-- USER 3 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto text-center" style="max-width:420px;">
+                    <img src="{% static 'images/pratyush.jpeg' %}" class="rounded-circle mb-3 profile-img" width="100"
+                        height="100">
+                    <h5 class="text-warning mb-1">Pratyush Kumar</h5>
+                    <p class="text-secondary small">Real Estate Professional, Mumbai</p>
+                    <div class="mb-2">
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                    </div>
+                    <p class="text-light-50">
+                        “I liked how the Chat AI connects Bhagavad Gita teachings with daily life problems.
+                        It doesn’t give random advice — it gives perspective.
+                        I often come back before making important decisions.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- USER 4 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto text-center" style="max-width:420px;">
+                    <img src="{% static 'images/tushu.jpeg' %}" class="rounded-circle mb-3 profile-img" width="100"
+                        height="100">
+                    <h5 class="text-warning mb-1">Tusharkant</h5>
+                    <p class="text-secondary small">Entrepreneur, Chennai</p>
+                    <div class="mb-2">
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star star"></i>
+                        <i class="bi bi-star star"></i>
+                    </div>
+                    <p class="text-light-50">
+                        “The Sunderkand AI and Hanuman-related sections are my favorite.
+                        The responses are peaceful and motivating, especially during low phases.
+                        It’s not just information, it feels supportive.”
+                    </p>
+                </div>
+            </div>
+            <!-- USER 5 -->
+            <div class="carousel-item">
+                <div class="testimonial-card mx-auto text-center" style="max-width:420px;">
+                    <img src="{% static 'images/subha.jpeg' %}" class="rounded-circle mb-3 profile-img" width="100"
+                        height="100">
+                    <h5 class="text-warning mb-1">Subha Sundar</h5>
+                    <p class="text-secondary small">Sportperson, Bhubaneshwar</p>
+                    <div class="mb-2">
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star-fill star"></i>
+                        <i class="bi bi-star star"></i>
+                    </div>
+                    <p class="text-light-50">
+                        “Dharma AI’s approach to spiritual guidance is refreshing.
+                        This platform helped me a lot to overcome overthinking and anxiety.
+                        The chat feature especially feels like talking to a wise friend.”
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ⭐ Enable touch swipe & pause -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const el = document.querySelector('#testimonialCarousel');
+        if (el) {
+            new bootstrap.Carousel(el, {
+                interval: 3500,
+                pause: 'hover',
+                touch: true,
+                ride: 'carousel'
+            });
+        }
+    });
+</script>
+
+{% endblock %}

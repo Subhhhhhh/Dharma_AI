@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .ramayan-output {
+        white-space: pre-wrap;
+        background: #121212;
+        padding: 20px;
+        color: #f5e6c8;
+        border-radius: 10px;
+        font-size: 1rem;
+        line-height: 1.7;
+        border-left: 5px solid #ffb300;
+        box-shadow: 0 0 12px rgba(255,179,0,0.15);
+    }
+
+    .chaupai-card {
+        border-radius: 15px;
+        background: #1a1a1a;
+        padding: 28px;
+        margin-bottom: 35px;
+        box-shadow: 0 0 18px rgba(255,179,0,0.18);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chaupai-card .bow-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        font-size: 160px;
+        color: rgba(255,193,7,0.07);
+        font-weight: bold;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .chaupai-card h3 {
+        position: relative;
+        z-index: 2;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .chaupai-card p {
+        position: relative;
+        z-index: 2;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .ramayan-form textarea {
+        height: 130px;
+        background: #fafafa;
+        color: #333;
+        border: 2px solid #e0b74f;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .ramayan-form textarea::placeholder {
+        color: #7a7a7a;
+    }
+
+    .ramayan-form textarea:focus {
+        box-shadow: 0 0 10px rgba(255,179,0,0.4);
+        border-color: #ffb300;
+        background: #ffffff;
+    }
+
+    .Ram-btn {
+    display: block;
+    padding: 16px 10px;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.35s ease;
+    box-shadow: 0 0 12px rgba(255,179,0,0.25);
+}
+
+/* Individual Themes */
+.Ram-btn.stuti {
+    background: linear-gradient(135deg, red, orange,white);
+}
+
+
+/* Hover Glow */
+.Ram-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255,179,0,0.7);
+    color: #fff;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    .Ram-btn {
+        font-size: 1rem;
+        padding: 14px;
+    }
+}
+
+
+
+
+
+
+</style>
+
+<div class="container py-4">
+
+   
+    <h2 class="section-title text-danger">🌺 Ramayan – Life Lessons of Shree Ram</h2>
+
+    <div class="col-md-4 mx-auto mb-4 ">
+        <a href="{% url 'advisor:Ram_stuti' %}" class="Ram-btn stuti mb-3 w-100 text-center">
+            📜 Shree Ram Stuti
+        </a>
+    </div>
+    <div class="chaupai-card text-center">
+        
+        
+        <div class="bow-bg">🏹</div>
+
+        <h3 class="text-warning mb-3">"मंगल भवन अमंगल हारी"</h3>
+
+        <p class="text-light-50 mb-2">
+            <b>मंगल भवन अमंगल हारी।</b><br>
+            <b>द्रवउ सो दसरथ अजिर बिहारी॥</b>
+        </p>
+
+        <p class="text-light-50 mt-3">
+            Shree Ram removes sorrows and brings auspiciousness  
+            <br>to anyone who remembers Him with devotion.
+            <br><br>
+            — <em>Baal Kand · Shri Ramcharitmanas</em>
+        </p>
+
+    </div>
+
+   <div class="alert alert-warning mb-3">
+                        <strong>🙏 Usage Notice</strong><br>
+                        Dharma AI is powered by the Gemini AI free tier.<br>
+                        The application supports a total of <b>20 AI requests per day (shared by all users)</b>.
+                        <br><br>
+                        Please use it mindfully and avoid excessive or frivolous queries to ensure availability for all
+                        users.
+
+                    </div>
+    <form method="post" class="ramayan-form">
+        {% csrf_token %}
+        <label class="text-warning mb-2"><b>Ask for a spiritual insight from Ramayan:</b></label>
+        <textarea name="message" class="form-control mb-3" 
+            placeholder="Example: 'Lesson from Sita Mata’s patience' or 'Story about Ram’s compassion'"></textarea>
+        <button class="btn btn-warning w-100 py-2">✨ Reveal Ramayan Wisdom</button>
+    </form>
+
+    
+    {% if output %}
+    <div class="ramayan-output mt-4">
+        {{ output|linebreaks }}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

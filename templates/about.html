@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block title %}About Me{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<style>
+/* Page Background */
+.about-bg {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #000000);
+    padding: 50px 0;
+    animation: fadeInPage 1.3s ease-in-out;
+}
+
+/* Main Card */
+.about-card {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 0 0 25px rgba(255, 179, 0, 0.2);
+    border: 2px solid rgba(255, 179, 0, 0.2);
+    backdrop-filter: blur(6px);
+    animation: floatUp 0.8s ease-out;
+}
+
+/* Section Headings */
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffb300;
+    text-shadow: 0 0 10px rgba(255, 179, 0, 0.5);
+}
+
+/* Intro Text */
+.intro-text {
+    color: #e8e8e8;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ffb300;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 179, 0, 0.5);
+    transition: 0.4s;
+}
+
+.profile-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255, 179, 0, 1);
+}
+
+/* Skills Badges */
+.skill-badge {
+    background: rgba(255, 179, 0, 0.15);
+    border: 1px solid rgba(255, 179, 0, 0.4);
+    color: #ffcc4d;
+    padding: 8px 14px;
+    border-radius: 25px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.skill-badge:hover {
+    background: #ffb300;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px #ffb300;
+}
+
+/* Soft Fade Animations */
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+
+<div class="about-bg">
+
+  <div class="about-card">
+
+      <!-- Profile Section -->
+      <div class="text-center">
+          <img src="{% static 'images/mine.jpeg' %}" alt="profile" class="profile-img">
+          <h2 class="text-warning mt-3">Subhajit Kar</h2>
+          <p class="text-secondary">Python | Django Developer | AI Enthusiast</p>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <!-- Introduction -->
+      <h3 class="section-title">👋 About Me</h3>
+      <p class="intro-text">
+          I am <b>Subhajit Kar</b>, a passionate developer who loves building modern applications using 
+          <span class="text-warning">Python, Django, and Generative AI</span>.  
+          I enjoy blending <b>technology</b> with <b>spiritual wisdom</b> — creating meaningful digital experiences 
+          like <i>Dharma AI</i> that inspire people on a deeper level.
+      </p>
+
+      <p class="intro-text">
+          I believe in writing clean, modern, and beautiful code.  
+          When I build something, I don’t just aim for functionality — I focus on experience, 
+          aesthetics, and impact.
+      </p>
+
+      <hr class="border-secondary my-4">
+
+      <!-- Skills Section -->
+      <h3 class="section-title">⚡ Skills & Technologies</h3>
+
+      <div class="mt-3">
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Django</span>
+          <span class="skill-badge">HTML</span>
+          <span class="skill-badge">CSS</span>
+          <span class="skill-badge">Bootstrap</span>
+          <span class="skill-badge">JavaScript</span>
+          <span class="skill-badge">AI / Generative AI</span>
+          <span class="skill-badge">REST APIs</span>
+          <span class="skill-badge">Git & GitHub</span>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <!-- Mission -->
+      <h3 class="section-title">🎯 My Vision</h3>
+      <p class="intro-text">
+          My goal is to become a highly skilled <b>AI-powered Full Stack Developer</b>, 
+          creating applications that blend intelligence, aesthetics, and real-world usefulness.  
+          I’m continuously learning cutting-edge technologies and exploring how AI can uplift people’s lives.
+      </p>
+
+      <p class="intro-text">
+          Every project I build — including Dharma AI — is a step toward that journey.
+      </p>
+
+  </div>
+
+</div>
+
+{% endblock %}

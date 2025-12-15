@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+
+    <!-- LEFT CONTENT -->
+    <div class="col-md-6 mb-4">
+        <h1 class="display-5 fw-bold text-light mb-3">
+            Dharma AI – Wisdom That Guides Life ✨
+        </h1>
+
+        <p class="lead text-light-50">
+            Dharma AI is a spiritual guidance platform built to help you navigate
+            life’s challenges using the timeless wisdom of
+            <b>Sanatan Dharma</b>.
+        </p>
+
+        <p class="text-light-50">
+            Instead of generic advice, this project uses teachings from
+            <b>Bhagavad Gita, Ramayan, and Sunderkand</b>
+            to offer calm, practical, and value-based guidance for modern life.
+        </p>
+
+        <a href="{% url 'advisor:chat' %}" class="btn btn-warning btn-lg mt-3 shadow">
+            Begin Your Journey
+        </a>
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="col-md-6 text-center">
+        <div class="dharma-card shadow-lg">
+            <h3 class="text-light mb-3">"यतो धर्मस्ततो जयः"</h3>
+
+            <p class="text-light-50 mb-3">
+                Where there is Dharma, there is victory.
+            </p>
+
+            <p class="text-light-50 mb-0">
+                This platform is useful for anyone seeking:
+                <br>• Mental clarity
+                <br>• Emotional strength
+                <br>• Moral direction
+                <br>• Spiritual growth
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- SECOND SECTION -->
+<div class="row mt-5">
+    <div class="col-md-12">
+
+        <h3 class="text-warning mb-3">🔱 Explore the Three Divine AI Paths</h3>
+
+        <p class="text-light-50">
+            Dharma AI is divided into three focused guidance systems,
+            each inspired by a different spiritual source.
+        </p>
+
+        <ul class="text-light-50 mt-3">
+            <li>
+                <b>🕉 Shastra Vaani (Chat AI)</b><br>
+                Ask about life problems, fear, stress, anger, career confusion,
+                relationships, self-control, karma, devotion, and inner peace.
+                Guidance is inspired by <b>Bhagavad Gita, Shree Krishna’s teachings,
+                and pujya Shree Premanand ji Maharaj's wisdom</b>.
+            </li>
+
+            <br>
+
+            <li>
+                <b>🏹 Ram Katha Mandap (Ramayan AI)</b><br>
+                Search for life lessons from <b>Shree Ram</b>,
+                examples of dharma, patience, sacrifice, leadership,
+                family values, and righteous decision-making.
+            </li>
+
+            <br>
+
+            <li>
+                <b>🛡 Sankat Mochan Path (Sunderkand AI)</b><br>
+                Ask for stories, chaupais, and lessons from <b>Shree Hanuman</b>.
+                Ideal for courage, overcoming fear, devotion, faith,
+                and understanding the path of <b>Bhagavat Prapti</b>.
+            </li>
+        </ul>
+
+    </div>
+</div>
+{% endblock %}

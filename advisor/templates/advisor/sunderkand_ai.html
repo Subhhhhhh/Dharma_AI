@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .ramayan-output {
+        white-space: pre-wrap;
+        background: #121212;
+        padding: 20px;
+        color: #f5e6c8;
+        border-radius: 10px;
+        font-size: 1rem;
+        line-height: 1.7;
+        border-left: 5px solid #ffb300;
+        box-shadow: 0 0 12px rgba(255, 179, 0, 0.15);
+    }
+
+    .chaupai-card {
+        border-radius: 15px;
+        background: #1a1a1a;
+        padding: 28px;
+        margin-bottom: 35px;
+        box-shadow: 0 0 18px rgba(255, 179, 0, 0.18);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chaupai-card .om-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 180px;
+        color: rgba(255, 193, 7, 0.07);
+        font-weight: bold;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .chaupai-card h3 {
+        position: relative;
+        z-index: 2;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+
+    .chaupai-card p {
+        position: relative;
+        z-index: 2;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .sunder-form textarea {
+        height: 130px;
+        background: #f8f8f8;
+        color: #333;
+        border: 2px solid #e0b74f;
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .sunder-form textarea::placeholder {
+        color: #7a7a7a;
+    }
+
+    .sunder-form textarea:focus {
+        box-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
+        border-color: #ffb300;
+        background: #ffffff;
+    }
+
+    .sunder-form textarea:focus {
+        box-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
+        border-color: #ffb300;
+    }
+
+
+    /* 🕉 Hanuman Devotional Buttons */
+    .hanuman-btn {
+        display: block;
+        padding: 16px 10px;
+        border-radius: 14px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.35s ease;
+        box-shadow: 0 0 12px rgba(255, 179, 0, 0.25);
+    }
+
+    /* Individual Themes */
+    .hanuman-btn.chalisa {
+        background: linear-gradient(135deg, #b71c1c, #ffb300);
+    }
+
+    .hanuman-btn.baan {
+        background: linear-gradient(135deg, #ff6f00, #c62828);
+    }
+
+    .hanuman-btn.sankat {
+        background: linear-gradient(135deg, #6a1b9a, #ffb300);
+    }
+
+    /* Hover Glow */
+    .hanuman-btn:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 0 20px rgba(255, 179, 0, 0.7);
+        color: #fff;
+    }
+
+    /* Mobile Friendly */
+    @media (max-width: 768px) {
+        .hanuman-btn {
+            font-size: 1rem;
+            padding: 14px;
+        }
+    }
+</style>
+
+<div class="container py-4">
+
+
+    <h2 class="section-title text-danger">🔥 Sunderkand – Divine Lessons of Hanuman</h2>
+
+    <!-- 🕉 Hanuman Paths Navigation -->
+    <div class="row text-center mb-4 g-3">
+
+        <div class="col-md-4">
+            <a href="{% url 'advisor:hanuman_chalisa' %}" class="hanuman-btn chalisa">
+                📜 Hanuman Chalisa
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="{% url 'advisor:bajrang_baan' %}" class="hanuman-btn baan">
+                🔥 Bajrang Baan
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="{% url 'advisor:sankat_mochan' %}" class="hanuman-btn sankat">
+                🛡 Sankat Mochan Ashtak
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="chaupai-card text-center">
+
+        <div class="om-bg">ॐ</div>
+
+        <h3 class="text-warning mb-3">"कवन सो काज कठिन जग माहीं"</h3>
+
+        <p class="text-light-50 mb-2">
+            <b>कवन सो काज कठिन जग माहीं।</b><br>
+            <b>जो न होइ तात तुम पाहीं॥</b>
+        </p>
+
+        <p class="text-light-50 mt-3">
+            No task in this world is impossible
+            <br>when one takes refuge in **Lord Hanuman's grace**.
+            <br><br>
+            – <em>Sunder Kand · Shri Ramcharitmanas</em>
+        </p>
+
+
+    </div>
+    <div class="alert alert-warning mb-3">
+        <strong>🙏 Usage Notice</strong><br>
+        Dharma AI is powered by the Gemini AI free tier.<br>
+        The application supports a total of <b>20 AI requests per day (shared by all users)</b>.
+        <br><br>
+        Please use it mindfully and avoid excessive or frivolous queries to ensure availability for all
+        users.
+
+    </div>
+    <form method="post" class="sunder-form">
+        {% csrf_token %}
+        <label class="text-warning mb-2"><b>Ask for a Sunderkand insight or story:</b></label>
+        <textarea name="message" class="form-control mb-3"
+            placeholder="Example: 'Give me a story about Hanuman's bravery'"></textarea>
+        <button class="btn btn-warning w-100 py-2">✨ Generate Divine Guidance</button>
+    </form>
+
+    {% if output %}
+    <div class="ramayan-output mt-4">
+        {{ output|linebreaks }}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}
