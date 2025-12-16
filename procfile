@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn dharma_ai.wsgi:application
+web: bash start.sh
