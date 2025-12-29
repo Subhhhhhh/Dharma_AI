@@ -117,7 +117,6 @@ Deployment | Railway
 
 ## 📸 Screenshots
 
-> *(Add screenshots here after deployment)*
 
 ### 🏠 Home Page
 Shows project purpose and spiritual theme.
@@ -152,7 +151,7 @@ Registration, login, OTP reset — all working live.
 ## 🚀 Live Project
 
 🔗 **Live URL:**  
-👉 [https://dharmaai-production.up.railway.app/](https://dharma-ai.onrender.com)
+👉 https://dharmaai-production.up.railway.app/](https://dharma-ai.onrender.com
 
 ---
 
