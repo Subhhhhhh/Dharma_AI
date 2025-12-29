@@ -131,4 +131,3 @@ Respond now using the defined structure.
                 "Please try again.\n\n"
                 f"**Error Details:** {error_msg}"
             )
-
