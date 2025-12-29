@@ -151,7 +151,8 @@ Registration, login, OTP reset — all working live.
 ## 🚀 Live Project
 
 🔗 **Live URL:**  
-👉 https://dharmaai-production.up.railway.app/](https://dharma-ai.onrender.com
+👉 https://dharma-ai.onrender.com
+
 
 ---
 
