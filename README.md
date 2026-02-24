@@ -111,7 +111,7 @@ Frontend | HTML, CSS, Bootstrap
 AI | Google Gemini API  
 Database | SQLite  
 Auth | Django Auth + Email + OTP  
-Deployment | Railway  
+Deployment | Render  
 
 ---
 
